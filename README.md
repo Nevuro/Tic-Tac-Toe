@@ -11,7 +11,7 @@
 - **Draw Detection**: Identifies stalemate when board is full
 - **Game Reset**: One-click restart for new matches
 
-### New in fork.V1
+### New in Enhanced
 - **🤖 AI Opponent**: Play against computer with 3 difficulty levels (Easy/Medium/Hard) using minimax algorithm
 - **📊 Score Tracking**: Persistent scores for Player X, Player O, and Draws
 - **↩️ Undo Move**: Step back through move history
