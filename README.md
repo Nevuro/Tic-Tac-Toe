@@ -1,4 +1,4 @@
-# Tic-Tac-Toe (fork.V1 - Enhanced)
+# Tic-Tac-Toe (Enhanced)
 
 🎮 A classic Tic Tac Toe game built with React + TypeScript, featuring AI opponent, score tracking, game history, and full accessibility support.
 
