@@ -4,7 +4,7 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Tic-Tac-Toe/',
+  base: '/Tic-Tac-Toe-main/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

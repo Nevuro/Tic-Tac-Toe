@@ -1,4 +1,4 @@
-# Tic-Tac-Toe (Enhanced)
+# Tic-Tac-Toe (fork.V1 - Enhanced)
 
 🎮 A classic Tic Tac Toe game built with React + TypeScript, featuring AI opponent, score tracking, game history, and full accessibility support.
 
@@ -11,7 +11,7 @@
 - **Draw Detection**: Identifies stalemate when board is full
 - **Game Reset**: One-click restart for new matches
 
-### New in Enhanced
+### New in fork.V1
 - **🤖 AI Opponent**: Play against computer with 3 difficulty levels (Easy/Medium/Hard) using minimax algorithm
 - **📊 Score Tracking**: Persistent scores for Player X, Player O, and Draws
 - **↩️ Undo Move**: Step back through move history
@@ -130,6 +130,31 @@ npm run preview
 | `npm run build` | Type-check + production build |
 | `npm run lint` | ESLint with TypeScript rules |
 | `npm run preview` | Preview production build locally |
+| `npm run deploy` | Build and deploy to GitHub Pages |
+
+## 🌐 Deploy to GitHub Pages
+
+### Option 1: Automatic (Recommended)
+1. Push to GitHub repository
+2. Go to **Settings → Pages**
+3. Set **Source** to "GitHub Actions"
+4. Push to `main` branch - workflow deploys automatically
+
+### Option 2: Manual
+```bash
+# Install gh-pages (already in devDependencies)
+npm install
+
+# Build and deploy
+npm run deploy
+```
+
+**Important**: Update `vite.config.ts` `base` path to match your repository name:
+```ts
+base: '/your-repo-name/',  // e.g., '/Tic-Tac-Toe-main/'
+```
+
+The workflow (`.github/workflows/deploy.yml`) handles build + deploy on every push to main/master.
 
 ## 📄 License
 
