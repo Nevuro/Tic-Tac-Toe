@@ -1,147 +1,107 @@
+:root {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #222;
+  --bg-tertiary: #2a2a2a;
+  --bg-hover: rgba(255, 255, 255, 0.05);
+  --text-primary: #eee;
+  --text-secondary: #aaa;
+  --text-muted: #888;
+  --border-primary: #333;
+  --border-secondary: #444;
+  --border-focus: #62fffc;
+  --accent-primary: #62fffc;
+  --accent-secondary: #ffa02e;
+  --accent-success: #49ff58;
+  --accent-warning: #ffa02e;
+  --accent-error: #ff4444;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow: 0.3s ease;
+  --font-mono: 'Consolas', 'Monaco', 'Courier New', monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+[data-theme="light"] {
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #fff;
+  --bg-tertiary: #eee;
+  --bg-hover: rgba(0, 0, 0, 0.05);
+  --text-primary: #222;
+  --text-secondary: #666;
+  --text-muted: #999;
+  --border-primary: #ddd;
+  --border-secondary: #ccc;
+  --border-focus: #00aacc;
+  --accent-primary: #00aacc;
+  --accent-secondary: #cc6600;
+  --accent-success: #28a745;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
-  background: #222;
-  font-family: consolas;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  line-height: 1.5;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
-.tic-tac-toe {
-  width: fit-content;
-  margin: 40px auto;
-  text-align: center;
-}
-.tic-tac-toe h1 {
-  color: #eee;
+#root {
+  min-height: 100vh;
 }
 
-.tic-tac-toe button {
-  padding: 8px 12px;
-  margin: 25px;
-  background: transparent;
-  border: 2px solid #eee;
-  color: #eee;
-  width: 100px;
-  border-radius: 5px;
-  transition: 0.2s;
-  font-weight: bold;
-  cursor: pointer;
+button {
+  font-family: inherit;
 }
 
-.tic-tac-toe button:hover {
-  background: #eee;
-  color: #222;
-}
-.tic-tac-toe .game {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-.turn {
-  display: flex;
-  justify-content: center;
-  margin: 15px auto;
-  width: fit-content;
-  position: relative;
-  border-radius: 10px;
+select {
+  font-family: inherit;
 }
 
-.turn .square,
-.winner .square {
-  width: 70px;
-  height: 70px;
-  pointer-events: none;
-  border-color: transparent;
+::selection {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
 }
 
-.turn .square span.x::before,
-.turn .square span.x::after {
-  background: #222;
-  transition: 0.2s;
+:focus-visible {
+  outline: 3px solid var(--border-focus);
+  outline-offset: 2px;
 }
 
-.turn .square span.o {
-  transition: 0.2s;
-  border-color: #222;
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.turn::after {
-  position: absolute;
-  content: "";
-  width: 50%;
-  height: 100%;
-  top: 0;
-  background: #49ff58;
-  border-radius: 9px;
-  z-index: -1;
-  transition: 0.2s;
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
 }
 
-.turn.left::after {
-  left: 0;
+::-webkit-scrollbar-thumb {
+  background: var(--border-secondary);
+  border-radius: 4px;
 }
 
-.turn.left span.o {
-  border-color: #eee;
-}
-.turn.right span.x::before,
-.turn.right span.x::after {
-  background: #eee;
-}
-.turn.right::after {
-  left: 50%;
-}
-
-.winner {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  display: grid;
-  place-items: center;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-.winner .text {
-  background: #111;
-  padding: 20px;
-  width: 70%;
-  max-width: 450px;
-  border: 2px solid #eee;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.winner .text h2 {
-  font-size: 2.5em;
-  margin: 15px 0;
-  color: #eee;
-}
-
-.winner .win {
-  margin: 0 auto;
-  width: fit-content;
-  border: 2px solid #eee;
-  border-radius: 10px;
-  display: flex;
-  gap: 15px;
-}
-
-@media screen and (max-width: 768px) {
-  .winner .text {
-    width: fit-content;
-    padding-inline: 15px;
-  }
-  .winner .text h2 {
-    font-size: 1.7em;
-    margin: 15px 0;
-    color: #eee;
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
 }

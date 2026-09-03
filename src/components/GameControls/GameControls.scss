@@ -1,0 +1,112 @@
+.game-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px auto;
+  max-width: 330px;
+  padding: 0 10px;
+
+  .controls-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.control-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+.control-select {
+  padding: 8px 12px;
+  background: #1a1a1a;
+  border: 2px solid #333;
+  color: #eee;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  min-width: 140px;
+
+  &:hover {
+    border-color: #555;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-color: #62fffc;
+    box-shadow: 0 0 0 3px rgba(98, 255, 252, 0.2);
+  }
+
+  option {
+    background: #222;
+    color: #eee;
+  }
+}
+
+.mode-selector,
+.difficulty-selector {
+  display: flex;
+  flex-direction: column;
+}
+
+.undo-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: 2px solid #ffa02e;
+  color: #ffa02e;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+
+  &:hover:not(:disabled) {
+    background: #ffa02e;
+    color: #222;
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-color: #666;
+    color: #666;
+  }
+
+  &:focus-visible {
+    outline: 3px solid #ffa02e;
+    outline-offset: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .controls-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mode-selector,
+  .difficulty-selector {
+    width: 100%;
+  }
+
+  .control-select {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .undo-btn,
+  .new-game-btn {
+    width: 100%;
+  }
+}

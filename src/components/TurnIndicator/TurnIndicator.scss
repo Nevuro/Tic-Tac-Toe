@@ -1,0 +1,81 @@
+.turn-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 15px auto;
+  width: fit-content;
+  padding: 12px 24px;
+  border-radius: 10px;
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border-primary);
+  transition: all var(--transition-normal);
+
+  &.x-turn {
+    border-color: #62fffc;
+    box-shadow: 0 0 12px rgba(98, 255, 252, 0.3);
+  }
+
+  &.o-turn {
+    border-color: #ffa02e;
+    box-shadow: 0 0 12px rgba(255, 160, 46, 0.3);
+  }
+
+  .board-square {
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+    border-color: transparent;
+    background: transparent;
+
+    span.x::before,
+    span.x::after {
+      background: var(--text-muted);
+      transition: var(--transition-normal);
+    }
+
+    span.o {
+      transition: var(--transition-normal);
+      border-color: var(--text-muted);
+    }
+  }
+
+  &.x-turn .board-square.x span.x::before,
+  &.x-turn .board-square.x span.x::after {
+    background: #62fffc;
+  }
+
+  &.o-turn .board-square.o span.o {
+    border-color: #ffa02e;
+  }
+
+  .turn-label {
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition-normal);
+  }
+
+  &.x-turn .turn-label {
+    color: #62fffc;
+  }
+
+  &.o-turn .turn-label {
+    color: #ffa02e;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px 18px;
+    gap: 8px;
+
+    .board-square {
+      width: 40px;
+      height: 40px;
+    }
+
+    .turn-label {
+      font-size: 0.95rem;
+    }
+  }
+}

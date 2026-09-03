@@ -1,0 +1,33 @@
+.new-game-btn {
+  padding: 12px 28px;
+  background: transparent;
+  border: 2px solid #eee;
+  color: #eee;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+
+  &:hover {
+    background: #eee;
+    color: #222;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus-visible {
+    outline: 3px solid #62fffc;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
