@@ -2,6 +2,15 @@
 
 🎮 A classic Tic Tac Toe game built with React + TypeScript, featuring AI opponent, score tracking, game history, and full accessibility support.
 
+## 🌐 Live Demo
+
+
+
+<p align="center">
+  <a href="https://nevuro.github.io/Tic-Tac-Toe/">
+    <img src="https://img.shields.io/badge/🚀_Live_Demo-Visit_Website-000?style=for-the-badge" alt="Live Demo">
+</p>
+    
 ## ✨ Features
 
 ### Core Gameplay
